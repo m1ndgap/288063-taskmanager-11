@@ -25,4 +25,6 @@ for (let i = 0; i < TASK_COUNT; i++) {
   render(taskListElement, createTaskTemplate());
 }
 
+render(taskListElement, createTaskEditTemplate(), `afterBegin`);
+
 render(boardElement, createLoadMoreButtonTemplate());

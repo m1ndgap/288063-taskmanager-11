@@ -1,4 +1,4 @@
-const createFilterTemplate = () => {
+export const createFilterTemplate = () => {
   return (
     `<section class="main__filter filter container">
       <input

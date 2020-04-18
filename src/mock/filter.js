@@ -36,8 +36,6 @@ const getFilterNumbers = (tasks) => {
   });
 };
 
-console.log(filterNames);
-
 const generateFilters = (tasks) => {
   getFilterNumbers(tasks, filterValues);
   return filterNames.map((name) => {
@@ -47,6 +45,5 @@ const generateFilters = (tasks) => {
     };
   });
 };
-
 
 export {generateFilters};

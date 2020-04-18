@@ -1,6 +1,6 @@
-const filterNames = [
-  `all`, `overdue`, `today`, `favorites`, `repeating`, `archive`
-];
+// const filterNames = [
+//   `all`, `overdue`, `today`, `favorites`, `repeating`, `archive`
+// ];
 
 const filterValues = {
   all: 0,
@@ -36,14 +36,28 @@ const getFilterNumbers = (tasks) => {
   });
 };
 
+// const generateFilters = (tasks) => {
+//   getFilterNumbers(tasks, filterValues);
+//   return filterNames.map((name) => {
+//     return {
+//       name,
+//       count: filterValues[name]
+//     };
+//   });
+// };
+
 const generateFilters = (tasks) => {
   getFilterNumbers(tasks, filterValues);
-  return filterNames.map((name) => {
-    return {
-      name,
-      count: filterValues[name]
-    };
-  });
+  let filters = [];
+  for (const name in filterValues) {
+    if (filterValues.hasOwnProperty(name)) {
+      filters.push({
+        name,
+        count: filterValues[name]
+      });
+    }
+  }
+  return filters;
 };
 
 export {generateFilters};

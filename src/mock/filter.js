@@ -20,7 +20,6 @@ const getFilterNumbers = (tasks) => {
       if (task.dueDate < today) {
         filterValues.overdue += 1;
       } else if (task.dueDate.toDateString() === today.toDateString()) {
-        // у меня почему-то не работае .toDateString(), поэтому сравню все поочереди, год пропускаем, подскажи что не так с .toDateString?
         filterValues.today += 1;
       } else {
         filterValues.repeating += 1;
@@ -37,6 +36,8 @@ const getFilterNumbers = (tasks) => {
   });
 };
 
+console.log(filterNames);
+
 const generateFilters = (tasks) => {
   getFilterNumbers(tasks, filterValues);
   return filterNames.map((name) => {
@@ -46,5 +47,6 @@ const generateFilters = (tasks) => {
     };
   });
 };
+
 
 export {generateFilters};

@@ -23,6 +23,8 @@ const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
 const tasks = generateTasks(TASK_COUNT);
 const filters = generateFilters(tasks);
 
+console.log(filters)
+
 render(siteHeaderElement, createSiteMenuTemplate());
 render(siteMainElement, createFilterTemplate(filters));
 render(siteMainElement, createBoardTemplate());

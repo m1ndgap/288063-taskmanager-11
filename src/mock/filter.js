@@ -21,11 +21,11 @@ const getFilterNumbers = (tasks) => {
         filterValues.overdue += 1;
       } else if (task.dueDate.toDateString() === today.toDateString()) {
         filterValues.today += 1;
-      } else {
-        filterValues.repeating += 1;
       }
     }
-
+    if (Object.values(task.repeatingDays).some(Boolean)) {
+      filterValues.repeating += 1;
+    }
     if (task.isArchive) {
       filterValues.archive += 1;
     }

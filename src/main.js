@@ -61,6 +61,7 @@ const renderBoard = (boardComponent, tasks) => {
     return;
   }
 
+
   render(boardComponent.getElement(), new SortComponent().getElement(), RenderPosition.BEFOREEND);
   render(boardComponent.getElement(), new TasksComponent().getElement(), RenderPosition.BEFOREEND);
 
